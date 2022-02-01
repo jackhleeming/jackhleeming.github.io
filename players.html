@@ -45,14 +45,14 @@
 <br>
 <br>
 
-<p> test 2 </p>
+<p> test 3 </p>
 
 <!-- RETRIEVE PLAYER INFORMATION -->
     <script>
         function change_myselect() {
             var select = document.getElementById("playerselect");
             var id = select.options[select.selectedIndex].value;
-            var data = $.getJSON('players.json')
+            var data = $.getJSON('players.json');
             
             console.log(id);
 
