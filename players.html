@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="jquery-3.5.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -37,7 +36,7 @@
         </div>
     </div>
 
-    <select id="playerselect" onchange="change_myselect(this.value)">
+    <select id="playerselect" onchange="renderUsers()">
         <option value="" selected>Select Golfer</option>
         <option value="will_davison">Will Davison</option>
         <option value="cameron_mccoll">Cameron McCool</option>
@@ -47,34 +46,47 @@
 <br>
 <br>
 
-<p> test 8 </p>
-
 <!-- RETRIEVE PLAYER INFORMATION -->
-    <script>
-        function change_myselect() {
-            var req = new XMLHttpRequest();
-            req.overrideMimeType("application/json");
-            req.open('GET', 'https://storage.googleapis.com/pinseekers-players/players.json', true);
-            req.onload = function() {
-                var jsonResponse = JSON.parse(req.responseText);
-                var select = document.getElementById("playerselect");
-                var id = select.options[select.selectedIndex].value;
-                console.log(id);
-                console.log(jsonResponse);
-                $('#player-name').html('<p>' + jsonResponse[player][0][name] + '</p>');
-                $('#player-bio').html('<p>' + jsonResponse[player][1][bio] + '</p>');
-            };
-            req.send(null);
-        };
+<p> test 9 </p>
+<!-- LOAD JSON -->
+<script>
+    async function getPlayers() {
+        let url = 'https://storage.googleapis.com/pinseekers-players/players.json';
+        try {
+            let res = await fetch(url);
+            console.log(res.json());
+            return await res.json();
+        } catch (error) {
+            console.log(error);
+        }
+}
+</script>
 
-    </script>
+<!-- UPDATE FRONT END BASED ON PLAYER SELECTION -->
+<script>
+async function renderUsers() {
+    let selector = document.getElementById("playerselect");
+    let selection = select.options[select.selectedIndex].value;
+    let players = await getPlayers();
+    let html = '';
+    players.selection(player => {
+        let htmlSegment =  `<div>${player.selection.name}</div>
+                            <div>${player.name}</div>`;
+                            
+        html += htmlSegment;
+    });
+
+    let container = document.querySelector('.player-detail');
+    container.innerHTML = html;
+}
+renderUsers();
+</script>
 
 <!-- PLAYER DETAILS FROM JSON -->
-<div id="player-detail">
+<div>
     <div id="row">
-        <div id="col-12">
-            <div id="player-name"></div>
-            <div id="player-bio"></div>
+        <div class="col-12 player-detail">
+            <!-- RETURN JSON HERE -->
         </div>
     </div>
 </div>
