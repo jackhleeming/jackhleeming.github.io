@@ -52,11 +52,11 @@
             var select = document.getElementById("playerselect");
             var id = select.options[select.selectedIndex].value;
             var data = $.getJSON('players.json')
-
-            $('#player-name').html('<p>' + data[id][name] + '</p>');
-            $('#player-bio').html('<p>' + data[id][bio] + '</p>');
-
+            
             console.log(value);
+
+            $('#player-name').html('<p>' + data[id].name + '</p>');
+            $('#player-bio').html('<p>' + data[id].bio + '</p>');
         };
     </script>
 
