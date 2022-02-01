@@ -66,22 +66,14 @@
 
 <!-- UPDATE FRONT END BASED ON PLAYER SELECTION -->
 <script>
-async function renderPlayer() {
+async function updatePlayer() {
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
     let players = await getPlayers();
     let html = '';
-    players.forEach(player => {
-        let htmlSegment =  `<div>${player.selection.name}</div>
-                            <div>${player.name}</div>`;
-                            
-        html += htmlSegment;
-    });
-
-    let container = document.querySelector('.player-detail');
-    container.innerHTML = html;
-}
-renderUsers();
+    console.log("Query: " + players.selection.name);
+    };
+updatePlayer();
 </script>
 
 <!-- PLAYER DETAILS FROM JSON -->
