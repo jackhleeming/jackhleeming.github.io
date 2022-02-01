@@ -61,8 +61,8 @@
                 var id = select.options[select.selectedIndex].value;
                 console.log(id);
                 console.log(jsonResponse);
-                $('#player-name').html('<p>' + data[id].name + '</p>');
-                $('#player-bio').html('<p>' + data[id].bio + '</p>');
+                $('#player-name').html('<p>' + jsonResponse[id].name + '</p>');
+                $('#player-bio').html('<p>' + jsonResponse[id].bio + '</p>');
             };
             req.send(null);
         };
