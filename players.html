@@ -36,8 +36,8 @@
         </div>
     </div>
 
-    <select id="playerselect" onchange="renderUsers()">
-        <option value="" selected>Select Golfer</option>
+    <select id="playerselect" onchange="myFunction(myArray)">
+        <option value="">Select Golfer</option>
         <option value="will_davison">Will Davison</option>
         <option value="cameron_mccoll">Cameron McCool</option>
         <option value="marcus_williams">Marcus Williams</option>
@@ -47,6 +47,33 @@
 <br>
 
 <!-- RETRIEVE PLAYER INFORMATION -->
+<!-- TEST -->
+<script>
+    var myArray = [
+{
+"display": "JavaScript Tutorial",
+"url": "https://www.w3schools.com/js/default.asp"
+},
+{
+"display": "HTML Tutorial",
+"url": "https://www.w3schools.com/html/default.asp"
+},
+{
+"display": "CSS Tutorial",
+"url": "https://www.w3schools.com/css/default.asp"
+}
+]
+
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' + arr[i].display + '</a><br>';
+    }
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
 <p> test 9 </p>
 <!-- LOAD JSON -->
 <script>
