@@ -36,8 +36,8 @@
         </div>
     </div>
 
-    <select id="playerselect" onchange="myFunction(myArray)">
-        <option value="" selected>Select Golfer</option>
+    <select id="playerselect" onchange="renderPlayer()">
+        <option value="will_davison" selected>Select Golfer</option>
         <option value="will_davison">Will Davison</option>
         <option value="cameron_mccoll">Cameron McCool</option>
         <option value="marcus_williams">Marcus Williams</option>
@@ -48,33 +48,8 @@
 
 <!-- RETRIEVE PLAYER INFORMATION -->
 <!-- TEST -->
-<script>
-    var myArray = [
-{
-"display": "JavaScript Tutorial",
-"url": "https://www.w3schools.com/js/default.asp"
-},
-{
-"display": "HTML Tutorial",
-"url": "https://www.w3schools.com/html/default.asp"
-},
-{
-"display": "CSS Tutorial",
-"url": "https://www.w3schools.com/css/default.asp"
-}
-]
 
-function myFunction(arr) {
-    var out = "";
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' + arr[i].display + '</a><br>';
-    }
-    document.getElementById("player-detail").innerHTML = out;
-}
-</script>
-
-<p> test 11 </p>
+<p> test 12 </p>
 <!-- LOAD JSON -->
 <script>
     async function getPlayers() {
@@ -91,12 +66,12 @@ function myFunction(arr) {
 
 <!-- UPDATE FRONT END BASED ON PLAYER SELECTION -->
 <script>
-async function renderUsers() {
+async function renderPlayer() {
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
     let players = await getPlayers();
     let html = '';
-    players.selection(player => {
+    players.forEach(player => {
         let htmlSegment =  `<div>${player.selection.name}</div>
                             <div>${player.name}</div>`;
                             
