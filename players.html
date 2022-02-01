@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="players.json"></script>
 </head>
 
 <body>
@@ -52,14 +51,10 @@
         function change_myselect() {
             var select = document.getElementById("playerselect");
             var id = select.options[select.selectedIndex].value;
-            var data = $.getJSON('players.json', function(result){
-                
-            })
+            var data = $.getJSON('players.json')
 
-            $('#player-name').html('<p>' + data[id].name + '</p>');
-            $('#player-bio').html('<p>' + id + '</p>');
-            
-            $.getJSON
+            $('#player-name').html('<p>' + data[id][name] + '</p>');
+            $('#player-bio').html('<p>' + data[id][bio] + '</p>');
 
             console.log(value);
         };
