@@ -37,7 +37,7 @@
     </div>
 
     <select id="playerselect" onchange="myFunction(myArray)">
-        <option value="">Select Golfer</option>
+        <option value="" selected>Select Golfer</option>
         <option value="will_davison">Will Davison</option>
         <option value="cameron_mccoll">Cameron McCool</option>
         <option value="marcus_williams">Marcus Williams</option>
@@ -92,8 +92,8 @@ function myFunction(arr) {
 <!-- UPDATE FRONT END BASED ON PLAYER SELECTION -->
 <script>
 async function renderUsers() {
-    let selector = document.getElementById("playerselect");
-    let selection = select.options[select.selectedIndex].value;
+    var select = document.getElementById("playerselect");
+    var selection = select.options[select.selectedIndex].value;
     let players = await getPlayers();
     let html = '';
     players.selection(player => {
