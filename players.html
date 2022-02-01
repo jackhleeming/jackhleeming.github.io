@@ -45,7 +45,7 @@
 <br>
 <br>
 
-<p> test 1 </p>
+<p> test 2 </p>
 
 <!-- RETRIEVE PLAYER INFORMATION -->
     <script>
@@ -54,7 +54,7 @@
             var id = select.options[select.selectedIndex].value;
             var data = $.getJSON('players.json')
             
-            console.log(value);
+            console.log(id);
 
             $('#player-name').html('<p>' + data[id].name + '</p>');
             $('#player-bio').html('<p>' + data[id].bio + '</p>');
