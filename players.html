@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<title>Pinseekers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="players.json"></script>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-default navbar-fixed-top" style="width:100%">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand"href="#"><img src="./pinseekers_logo.svg" class="img-responsive" width="120px" style="margin-top: -12px;"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="./results.html">Results</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PLAYER PROFILES -->
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="section-header"><!-- PLAYER NAME --></h1>
+        </div>
+    </div>
+
+    <select id="playerselect" onchange="change_myselect(this.value)">
+        <option value="" selected>Select Golfer</option>
+        <option value="will_davison">Will Davison</option>
+        <option value="cameron_mccoll">Cameron McCool</option>
+        <option value="marcus_williams">Marcus Williams</option>
+    </select>
+
+<br>
+<br>
+
+
+<!-- RETRIEVE PLAYER INFORMATION -->
+    <script>
+        function change_myselect() {
+            var select = document.getElementById("playerselect");
+            var id = select.options[select.selectedIndex].value;
+            var data = $.getJSON('players.json', function(result){
+                
+            })
+
+            $('#player-name').html('<p>' + data[id].name + '</p>');
+            $('#player-bio').html('<p>' + id + '</p>');
+            
+            $.getJSON
+
+            console.log(value);
+        };
+    </script>
+
+<!-- PLAYER DETAILS FROM JSON -->
+<div id="player-detail">
+    <div id="row">
+        <div id="col-12">
+            <div id="player-name"></div>
+            <div id="player-bio"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- COPYRIGHT -->
+<br>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <footer class="page-footer font-small blue pt-4 mt-4">
+            <div class="footer-copyright text-center py-3">© 2022 Copyright:
+              <a href="https://www.youtube.com/results?search_query=how+to+fix+a+slice"> Pinseekers New Zealand Limited</a>
+            </div>
+        </footer>
+    </div>
+</div>
+<br>
+
+</body>
+</html>
