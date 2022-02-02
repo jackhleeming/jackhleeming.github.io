@@ -53,43 +53,34 @@
 <br>
 <br>
 
-<!-- TEST -->
-<p>v0.31</p>
-<!-- RETRIEVE PLAYER DETAIL FROM JSON AND RENDER ON PAGE -->
+<!-- RENDER PLAYER BIOS -->
 <script>
-var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
-function updatePlayer(){
-  $.ajax({
-    url: url,
-    dataType: 'json',
-      error: function(){
-        console.log('JSON FAILED for data');
-      },
-    success:function(results){
-    var select = document.getElementById("playerselect");
-    var selection = select.options[select.selectedIndex].value;
-    var playerfname = results[selection].fname;
-    var playerlname = results[selection].lname;
-    var playerhandicap = results[selection].handicap;
-    var playerbio = results[selection].bio;
+    // retrieve players json file
+    var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
+    function updatePlayer(){
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        error: function(){
+            console.log('JSON FAILED for data');
+        },
+        success:function(results){
+            // assign json elements to variable
+            var selection = select.options[select.selectedIndex].value;
+            var playerfname = results[selection].fname;
+            var playerlname = results[selection].lname;
+            var playerhandicap = results[selection].handicap;
+            var playerbio = results[selection].bio;
+            
+            // update html
+            var nametarget = document.getElementById("bio-name");
+            var handicaptarget = document.getElementById("bio-handicap");
+            var biotarget = document.getElementById("bio-content");
 
-    // TEST JSON AND VARIABLES
-    console.log(results);
-    console.log(selection);
-    console.log(playerfname);
-    console.log(playerhandicap);
-    
-    // UPDATE HTML
-    var html = "<p>" + playerfname + " " + playerlname + "</p>";
-    var nametarget = document.getElementById("bio-name");
-    var handicaptarget = document.getElementById("bio-handicap");
-    var biotarget = document.getElementById("bio-content");
-
-    nametarget.innerHTML = playerfname + " " + playerlname;
-    handicaptarget.innerHTML = playerhandicap
-    biotarget.innerHTML = playerbio
-
-    }
+            nametarget.innerHTML = playerfname + " " + playerlname;
+            handicaptarget.innerHTML = playerhandicap
+            biotarget.innerHTML = playerbio
+        }
    })
 };
 </script>
@@ -99,13 +90,17 @@ function updatePlayer(){
 <p id="bio-content"></p>
 
 <!-- PLAYER DETAILS -->
-<div>
+<div class="container">
     <div id="row">
-        <div class="col-12" id="player-detail">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="player-detail">
             <h1 id="bio-name"></h1>
             <h2 id="bio-handicap"></h2>
             <p id="bio-content"></p>
         </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
     </div>
 </div>
 
