@@ -54,7 +54,7 @@
 <br>
 
 <!-- TEST -->
-<p>v0.30</p>
+<p>v0.31</p>
 <!-- RETRIEVE PLAYER DETAIL FROM JSON AND RENDER ON PAGE -->
 <script>
 var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
@@ -84,9 +84,11 @@ function updatePlayer(){
     var nametarget = document.getElementById("bio-name");
     var handicaptarget = document.getElementById("bio-handicap");
     var biotarget = document.getElementById("bio-content");
-    nametarget.insertAdjacentHTML("afterbegin", playerfname + " " + playerlname);
-    handicaptarget.insertAdjacentHTML("afterbegin", playerhandicap);
-    biotarget.insertAdjacentHTML("afterbegin", playerbio);
+
+    nametarget.innerHTML = playerfname + " " + playerlname;
+    handicaptarget.innerHTML = playerhandicap
+    biotarget.innerHTML = playerbio
+
     }
    })
 };
