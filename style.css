@@ -7,11 +7,11 @@
 
     .header-content h1 {
         font-weight: bolder;
-        color: rgb(211, 211, 211);
+        color: rgb(228, 228, 228);
     }
 
     .header-content h2 {
-        color: rgb(211, 211, 211);
+        color: rgb(228, 228, 228);
     }
 
     .section-header {
@@ -33,3 +33,12 @@
 
 
 /* PLAYER BIOS */
+select, option {
+    width: 100%;
+}
+
+option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

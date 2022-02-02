@@ -29,26 +29,30 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="section-header"><!-- PLAYER NAME --></h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12">
+            <select class="playerselect" id="playerselect" onchange="updatePlayer()">
+                <option value="" selected>Select Golfer</option>
+                <option value="willdavison">William Davison</option>
+                <option value="cameronmccoll">Cameron McCool</option>
+                <option value="marcuswilliams">Marcus Williams</option>
+                <option value="jacklarsen">Jack Larsen</option>
+                <option value="jackryder">Jack Ryder</option>
+                <option value="dannycloete">Danny Cloete</option>
+                <option value="harrybarker">Harry Barker</option>
+                <option value="jackleeming">Jack Leeming</option>
+                <option value="fletcherboswell">Fletcher Boswell</option>
+                <option value="zacgadsby">Zac Gadsby</option>
+            </select>
         </div>
     </div>
+</div>
 
-    <select id="playerselect" onchange="updatePlayer()">
-        <option value="" selected>Select Golfer</option>
-        <option value="willdavison">William Davison</option>
-        <option value="cameronmccoll">Cameron McCool</option>
-        <option value="marcuswilliams">Marcus Williams</option>
-        <option value="jacklarsen">Jack Larsen</option>
-        <option value="jackryder">Jack Ryder</option>
-        <option value="dannycloete">Danny Cloete</option>
-        <option value="harrybarker">Harry Barker</option>
-        <option value="jackleeming">Jack Leeming</option>
-        <option value="fletcherboswell">Fletcher Boswell</option>
-        <option value="zacgadsby">Zac Gadsby</option>
-    </select>
 
 <br>
 <br>
