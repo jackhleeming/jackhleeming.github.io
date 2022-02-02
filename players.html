@@ -68,16 +68,19 @@
             // assign json elements to variable
             var select = document.getElementById("playerselect");
             var selection = select.options[select.selectedIndex].value;
+            var playerphotosrc = results[selection].picture;
             var playerfname = results[selection].fname;
             var playerlname = results[selection].lname;
             var playerhandicap = results[selection].handicap;
             var playerbio = results[selection].bio;
             
             // update html
+            var phototarget = document.getElementById("player-photo");
             var nametarget = document.getElementById("bio-name");
             var handicaptarget = document.getElementById("bio-handicap");
             var biotarget = document.getElementById("bio-content");
 
+            phototarget.innerHTML = '<img src="' + playerphotosrc + '" class ="img-responsive" height="100px"';
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = playerhandicap
             biotarget.innerHTML = playerbio
@@ -93,15 +96,15 @@
 <!-- PLAYER DETAILS -->
 <div class="container">
     <div id="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="player-photo">
+            <img src="./player_photos/will_davison.jpg" class="img-responsive" height="100px">
+        </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="player-detail">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="player-detail">
             <h1 id="bio-name"></h1>
             <h2 id="bio-handicap"></h2>
             <p id="bio-content"></p>
         </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
     </div>
 </div>
 
