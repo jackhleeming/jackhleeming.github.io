@@ -37,3 +37,7 @@
     .bio-photo {
         height: 350px;
     }
+
+    .player-selector {
+        width: 100%;
+    }
