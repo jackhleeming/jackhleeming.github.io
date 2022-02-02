@@ -37,10 +37,10 @@
     </div>
 
     <select id="playerselect" onchange="updatePlayer()">
-        <option value="will_davison" selected>Select Golfer</option>
-        <option value="will_davison">Will Davison</option>
-        <option value="cameron_mccoll">Cameron McCool</option>
-        <option value="marcus_williams">Marcus Williams</option>
+        <option value="william-davison" selected>Select Golfer</option>
+        <option value="william-davison">Will Davison</option>
+        <option value="cameron-mccoll">Cameron McCool</option>
+        <option value="marcus-williams">Marcus Williams</option>
     </select>
 
 <br>
@@ -66,10 +66,10 @@ function updatePlayer(){
     /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    var playerName = results.will_davison.name;
-    var playerHandicap = results.will_davison.handicap;
+    var playerName = results.william-davison.name;
+    var playerHandicap = results.william-davison.handicap;
 
-    // TEST JSON AND VARIABLE
+    // TEST JSON AND VARIABLES
     console.log(results);
     console.log(selection);
     console.log(playerName);
