@@ -44,7 +44,7 @@
         "fname": "Marcus",
         "lname": "Williams",
         "handicap": "Low Teens",
-        "picture": "player_photos/marcus_williams.jpg",
+        "picture": "https://thumbs2.imgbox.com/e8/b7/ArcEEmlc_t.jpg",
         "bio": "Player bio tbc"
     },
 "dannycloete":{
@@ -52,7 +52,7 @@
         "fname": "Danny",
         "lname": "Cloete",
         "handicap": "20-30",
-        "picture": "player_photos/danny_cloete.jpg",
+        "picture": "https://thumbs2.imgbox.com/71/ed/OH7qRNXJ_t.jpg",
         "bio": "Player bio tbc"
     },
 "harrybarker":{
@@ -60,7 +60,7 @@
         "fname": "Harry",
         "lname": "Barker",
         "handicap": "20-30",
-        "picture": "player_photos/harry_barker.jpg",
+        "picture": "https://thumbs2.imgbox.com/0b/0c/EoPyO3Ek_t.png",
         "bio": "Player bio tbc"
     },
 "fletcherboswell":{
@@ -68,7 +68,7 @@
         "fname": "Fletcher",
         "lname": "Boswell",
         "handicap": "30+",
-        "picture": "player_photos/fletcher_boswell.jpg",
+        "picture": "https://thumbs2.imgbox.com/7f/4c/AiDYpzOr_t.jpg",
         "bio": "Player bio tbc"
     },
 "zacgadsby":{
@@ -76,7 +76,7 @@
         "fname": "Zac",
         "lname": "Gadsby",
         "handicap": "Teens",
-        "picture": "player_photos/zac_gadsby.jpg",
+        "picture": "https://thumbs2.imgbox.com/3f/8d/ZPmxEPYn_t.jpg",
         "bio": "Player bio tbc"
     }
 }
