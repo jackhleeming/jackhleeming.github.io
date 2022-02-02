@@ -18,9 +18,9 @@
 
 <script>
   function playersLoad() {
-    var selection = sessionStorage.getItem("selection");
+    var selection = sessionStorage.getItem("indexselection");
     if (selection = "") {
-      return false
+      
     } else {
       updatePlayer();
     }
@@ -97,8 +97,8 @@
 <!-- RENDER PLAYER BIOS -->
 <script>
     // retrieve players json file
-    var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
     function updatePlayer(){
+    var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
     $.ajax({
         url: url,
         dataType: 'json',
