@@ -4,7 +4,7 @@
         "fname": "Cameron",
         "lname": "McCool",
         "handicap": "Extremely High",
-        "picture": "./player_photos/cameron_mccoll.jpg",
+        "picture": "player_photos/cameron_mccoll.jpg",
         "bio": "While relatively new to golf, Cameron is learning quickly. Known for his gentle, albeit aggressive draw, Cameron won’t shy away from whipping out his willy on the tee box and fraudulently chucking birdie down on the scorecard. With impeccable technique and an athletic bod, you start to wonder why his handicap is sitting at 47.8? It’s only a matter of time until you realise... it’s his absolutely shocking attitude.\n<br><br>\nA missed three footer on green 1 and you know he’s tilted for the rest of the round. Can he keep his head strong and get his handicap sub-40? Or will he be forever doomed with the guilt and reputation that comes with being a very high handicapper."
     },
 "willdavison":{
@@ -12,7 +12,7 @@
         "fname": "William",
         "lname": "Davison",
         "handicap": "Low Teens",
-        "picture": "./player_photos/will_davison.jpg",
+        "picture": "player_photos/will_davison.jpg",
         "bio": "With the second best handicap in the tournament and a balls deep investment in cryptocurrency, what’s not to like about this competitor. Will’s humble golfing origins began at the prestigious Saint Kentigern Golfing Academy. Not only did he learn how to elegantly swing a golf club, he mastered the art of lying down on the green to vigorously line up a two foot putt.\n<br><br>\nHaving recently landed ashore from years on the superyachts, stable ground seems to be bringing results to his golfing game. Will hands in counter after counter, and we all know he has what it takes, but can he execute?"
     },
 "jacklarsen":{
@@ -20,7 +20,7 @@
         "fname": "Jack",
         "lname": "Larsen",
         "handicap": "20-30",
-        "picture": "./player_photos/jack_larsen.jpg",
+        "picture": "player_photos/jack_larsen.jpg",
         "bio": "Born and raised amongst the iconic pine trees of suburban Glendowie, Jack Larsen thrives in a woodland course. If you see Jack reach for the trusty 4 iron off the tee box, rest assured he will likely hit it further and straighter than your dusty pull-hook drive.\n<br><br>\nOn 5 April, 2021, Jack sent waves of panic into the golfing community, locking in a 90 at Howick while playing off a 31 handicap. It begs the question, is this young talent just a one hit wonder, or is he waiting for his time to shine? With only a few rounds under his belt, and some saying he punches above his handicap, Jack Larsen is both one to watch, and one with plenty to prove."
     },
 "jackryder":{
@@ -28,7 +28,7 @@
         "fname": "Jack",
         "lname": "Ryder",
         "handicap": "Low Teens",
-        "picture": "./player_photos/jack_ryder.jpg",
+        "picture": "player_photos/jack_ryder.jpg",
         "bio": "Player bio tbc"
     },
 "jackleeming":{
@@ -36,7 +36,7 @@
         "fname": "Jack",
         "lname": "Leeming",
         "handicap": "20-30",
-        "picture": "./player_photos/jack_leeming.jpg",
+        "picture": "player_photos/jack_leeming.jpg",
         "bio": "Player bio tbc"
     },
 "marcuswilliams":{
@@ -44,7 +44,7 @@
         "fname": "Marcus",
         "lname": "Williams",
         "handicap": "Low Teens",
-        "picture": "./player_photos/marcus_williams.jpg",
+        "picture": "player_photos/marcus_williams.jpg",
         "bio": "Player bio tbc"
     },
 "dannycloete":{
@@ -52,7 +52,7 @@
         "fname": "Danny",
         "lname": "Cloete",
         "handicap": "20-30",
-        "picture": "./player_photos/danny_cloete.jpg",
+        "picture": "player_photos/danny_cloete.jpg",
         "bio": "Player bio tbc"
     },
 "harrybarker":{
@@ -60,7 +60,7 @@
         "fname": "Harry",
         "lname": "Barker",
         "handicap": "20-30",
-        "picture": "./player_photos/harry_barker.jpg",
+        "picture": "player_photos/harry_barker.jpg",
         "bio": "Player bio tbc"
     },
 "fletcherboswell":{
@@ -68,7 +68,7 @@
         "fname": "Fletcher",
         "lname": "Boswell",
         "handicap": "30+",
-        "picture": "./player_photos/fletcher_boswell.jpg",
+        "picture": "player_photos/fletcher_boswell.jpg",
         "bio": "Player bio tbc"
     },
 "zacgadsby":{
@@ -76,7 +76,7 @@
         "fname": "Zac",
         "lname": "Gadsby",
         "handicap": "Teens",
-        "picture": "zac_gadsby",
+        "picture": "player_photos/zac_gadsby.jpg",
         "bio": "Player bio tbc"
     }
 }
