@@ -49,33 +49,38 @@
 <!-- RETRIEVE PLAYER INFORMATION -->
 <!-- TEST -->
 
-<p> test 15 </p>
-<!-- LOAD JSON -->
-<script>
-    async function getPlayers() {
-        let url = 'https://storage.googleapis.com/pinseekers-players/players.json';
-        try {
-            let res = await fetch(url);
-            return await res.json();
-        } catch (error) {
-            console.log(error);
-        }
-}
-</script>
+<p> test 16 </p>
 
-<!-- UPDATE FRONT END BASED ON PLAYER SELECTION -->
 <script>
-async function updatePlayer() {
+var url = "https://storage.googleapis.com/pinseekers-players/players.json";
+
+/* this tells the page to wait until jQuery has loaded, so you can use the Ajax call */
+function updatePlayer(){
+  $.ajax({
+    url: url,
+    dataType: 'json',
+      error: function(){
+        console.log('JSON FAILED for data');
+      },
+    success:function(results){
+    /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
+    var playerDetail = document.getElementById("player-detail");
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    let players = await getPlayers();
-    let html = '';
-    console.log("Query: " + players.selection.name);
-    };
-updatePlayer();
+
+    console.log(results);
+    console.log(selection);
+    
+    playerDetail.insertAdjacentHTML("<p>" + [selection].name + "</p>")
+    }
+   })
+};
+
+
 </script>
 
-<!-- PLAYER DETAILS FROM JSON -->
+
+<!-- PLAYER DETAILS -->
 <div>
     <div id="row">
         <div class="col-12 player-detail">
