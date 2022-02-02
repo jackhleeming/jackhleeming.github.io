@@ -78,6 +78,7 @@ function updatePlayer(){
     // UPDATE HTML
     var html = "<p>" + playerName + "</p>"
     var target = document.getElementById("player-detail");
+    target.removeChild(input.parentNode)
     target.insertAdjacentHTML("afterbegin", html)
     }
    })
