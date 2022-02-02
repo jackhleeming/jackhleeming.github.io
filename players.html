@@ -64,18 +64,21 @@ function updatePlayer(){
       },
     success:function(results){
     /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
-    var playerDetail = document.getElementById("player-detail");
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    var playerName = results[selection].name;
-    var playerHandicap = results[selection].handicap;
+    var playerName = results[1].name;
+    var playerHandicap = results[1].handicap;
 
+    // TEST JSON AND VARIABLE
     console.log(results);
     console.log(selection);
     console.log(playerName);
     console.log(playerHandicap);
     
-    playerDetail.insertAdjacentHTML("<p>" + results[selection].name + "</p>")
+    // UPDATE HTML
+    var html = "<p>" + playerName + "</p>"
+    var target = document.getElementById("player-detail");
+    target.insertAdjacentHTML(html)
     }
    })
 };
@@ -87,7 +90,7 @@ function updatePlayer(){
 <!-- PLAYER DETAILS -->
 <div>
     <div id="row">
-        <div class="col-12 player-detail">
+        <div class="col-12" id="player-detail">
             <!-- RETURN JSON HERE -->
         </div>
     </div>
