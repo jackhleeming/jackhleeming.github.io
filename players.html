@@ -69,16 +69,18 @@
             console.log('JSON FAILED for data');
         },
         success:function(results){
-            // assign json elements to variable
+            // assign selected player to variable
             var select = document.getElementById("playerselect");
             var selection = select.options[select.selectedIndex].value;
+
+            // assign json elements to variable for selected player
             var playerphotosrc = results[selection].picture;
             var playerfname = results[selection].fname;
             var playerlname = results[selection].lname;
             var playerhandicap = results[selection].handicap;
             var playerbio = results[selection].bio;
             
-            // update html
+            // update html based
             var phototarget = document.getElementById("player-photo");
             var nametarget = document.getElementById("bio-name");
             var handicaptarget = document.getElementById("bio-handicap");
@@ -92,15 +94,11 @@
 };
 </script>
 
-<h1 id="bio-name"></h1>
-<h2 id="bio-handicap"></h2>
-<p id="bio-content"></p>
-
 <!-- PLAYER DETAILS -->
 <div class="container">
     <div id="row d-flex justify-content-center">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="player-photo">
-            
+
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="player-detail">
@@ -128,7 +126,7 @@
 <br>
 <br>
 
-<p style="text-align: center;">Pinseekers.com test v0.43</p>
+<p style="text-align: center;">Pinseekers.com test v0.44</p>
 
 </body>
 </html>
