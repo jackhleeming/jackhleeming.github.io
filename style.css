@@ -32,9 +32,8 @@
         opacity: 0.95;
     }
 
-    .header-image:hover {
-        opacity: 1;
-    }
-
 
 /* PLAYER BIOS */
+    .bio-photo {
+        height: 350px;
+    }
