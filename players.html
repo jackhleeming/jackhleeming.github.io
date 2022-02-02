@@ -71,7 +71,7 @@ function updatePlayer(){
     console.log(results);
     console.log(selection);
     
-    playerDetail.insertAdjacentHTML("<p>" + [selection].name + "</p>")
+    playerDetail.insertAdjacentHTML("<p>" + results[selection].name + "</p>")
     }
    })
 };
