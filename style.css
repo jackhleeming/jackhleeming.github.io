@@ -33,12 +33,3 @@
 
 
 /* PLAYER BIOS */
-select, option {
-    width: 100%;
-}
-
-option {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
