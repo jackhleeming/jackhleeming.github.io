@@ -17,7 +17,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-  function playersLoad() {
+  function playerLoad() {
     var selection = sessionStorage.getItem("indexselection");
     if (selection = "") {
       
@@ -29,7 +29,7 @@
 
 </head>
 
-<body onload="playersLoad()">
+<body onload="playerLoad()">
 
 <!-- NAVIGATION -->
 <nav class="navbar navbar-default">
@@ -149,8 +149,8 @@
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
 
-
-              }
+            sessionStorage.setItem("indexselection", "");
+              };
 
 
         }
