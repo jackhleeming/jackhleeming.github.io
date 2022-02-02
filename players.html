@@ -38,9 +38,9 @@
 
     <select id="playerselect" onchange="updatePlayer()">
         <option value="william-davison" selected>Select Golfer</option>
-        <option value="william-davison">Will Davison</option>
-        <option value="cameron-mccoll">Cameron McCool</option>
-        <option value="marcus-williams">Marcus Williams</option>
+        <option value="williamdavison">Will Davison</option>
+        <option value="cameronmccoll">Cameron McCool</option>
+        <option value="marcuswilliams">Marcus Williams</option>
     </select>
 
 <br>
@@ -49,7 +49,7 @@
 <!-- RETRIEVE PLAYER INFORMATION -->
 <!-- TEST -->
 
-<p> test 21 </p>
+<p> test 22 </p>
 
 <script>
 var url = "https://storage.googleapis.com/pinseekers-players/players.json";
@@ -66,8 +66,8 @@ function updatePlayer(){
     /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    var playerName = results.william-davison.name;
-    var playerHandicap = results.william-davison.handicap;
+    var playerName = results.williamdavison.name;
+    var playerHandicap = results.williamdavison.handicap;
 
     // TEST JSON AND VARIABLES
     console.log(results);
