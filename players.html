@@ -48,50 +48,26 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
-          <li class="active"><a href="players.html">Golfers</a></li>
-          <li><a href="results.html">Results</a></li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+            <a href="./players.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Golfers<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+                <li><a onclick='gotoPlayer("jackryder")' value="jackryder" href="./players.html" value="">Jack Ryder</a></li>
+                <li><a onclick='gotoPlayer("marcuswilliams")' href="./players.html">Marcus Williams</a></li>
+                <li><a onclick='gotoPlayer("willdavison")' href="./players.html">William Davison</a></li>
+                <li><a onclick='gotoPlayer("zacgadsby")' href="./players.html">Zac Gadsby</a></li>
+                <li><a onclick='gotoPlayer("jackleeming")' href="./players.html">Jack Leeming</a></li>
+                <li><a onclick='gotoPlayer("harrybarker")' href="./players.html">Harry Barker</a></li>
+                <li><a onclick='gotoPlayer("jacklarsen")' href="./players.html">Jack Larsen</a></li>
+                <li><a onclick='gotoPlayer("dannycloete")' href="./players.html">Danny Cloete</a></li>
+                <li><a onclick='gotoPlayer("fletcherboswell")' href="./players.html">Fletcher Boswell</a></li>
+                <li><a onclick='gotoPlayer("cameronmccoll")' href="./players.html">Cameron McCool</a></li>
             </ul>
-          </li>
+            </li>
+            <li><a href="results.html">Results</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
 
 <!-- PLAYER PROFILES -->
-<br>
-<div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-0"></div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 player-selector">
-            <select class="playerselect" id="playerselect" onchange="updatePlayer()">
-                <option value="" selected>Select Golfer</option>
-                <option value="willdavison">William Davison</option>
-                <option value="cameronmccoll">Cameron McCool</option>
-                <option value="marcuswilliams">Marcus Williams</option>
-                <option value="jacklarsen">Jack Larsen</option>
-                <option value="jackryder">Jack Ryder</option>
-                <option value="dannycloete">Danny Cloete</option>
-                <option value="harrybarker">Harry Barker</option>
-                <option value="jackleeming">Jack Leeming</option>
-                <option value="fletcherboswell">Fletcher Boswell</option>
-                <option value="zacgadsby">Zac Gadsby</option>
-            </select>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-0"></div>
-        </div>
-    </div>
-</div>
 <br>
 
 <!-- RENDER PLAYER BIOS -->
@@ -106,32 +82,8 @@
             console.log('JSON FAILED for data');
         },
         success:function(results){
+            // get player selection
             var indexselection = sessionStorage.getItem("indexselection");
-              if (indexselection = "") {
-            // assign selected player to variable
-            var select = document.getElementById("playerselect");
-            var selection = select.options[select.selectedIndex].value;
-
-            // assign json elements to variable for selected player
-            var playerphotosrc = results[selection].picture;
-            var playerfname = results[selection].fname;
-            var playerlname = results[selection].lname;
-            var playerhandicap = results[selection].handicap;
-            var playerbio = results[selection].bio;
-            
-            // update html
-            var phototarget = document.getElementById("player-photo");
-            var nametarget = document.getElementById("bio-name");
-            var handicaptarget = document.getElementById("bio-handicap");
-            var biotarget = document.getElementById("bio-content");
-            phototarget.innerHTML = '<img id="bio-photo" class="img-responsive" src="' + playerphotosrc + '">';
-            nametarget.innerHTML = playerfname + " " + playerlname;
-            handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
-            biotarget.innerHTML = playerbio; 
-              } else {
-            // assign selected player to variable
-            var selection = sessionStorage.getItem("indexselection");
-
             // assign json elements to variable for selected player
             var playerphotosrc = results[selection].picture;
             var playerfname = results[selection].fname;
@@ -148,13 +100,8 @@
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
-
-            sessionStorage.setItem("indexselection", "");
-              };
-
-
-        }
-   })
+            }
+          })
 };
 </script>
 
