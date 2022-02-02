@@ -80,15 +80,16 @@
             var playerhandicap = results[selection].handicap;
             var playerbio = results[selection].bio;
             
-            // update html based
-            var phototarget = document.getElementById("player-photo");
+            // update html
             var nametarget = document.getElementById("bio-name");
             var handicaptarget = document.getElementById("bio-handicap");
             var biotarget = document.getElementById("bio-content");
-
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
+
+            var phototarget = document.getElementById("player-photo");
+            phototarget.innerHTML = playerphotosrc
         }
    })
 };
