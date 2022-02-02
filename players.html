@@ -49,7 +49,7 @@
 <!-- RETRIEVE PLAYER INFORMATION -->
 <!-- TEST -->
 
-<p> test 19 </p>
+<p> test 20 </p>
 
 <script>
 var url = "https://storage.googleapis.com/pinseekers-players/players.json";
@@ -66,8 +66,8 @@ function updatePlayer(){
     /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    var playerName = results[1].name;
-    var playerHandicap = results[1].handicap;
+    var playerName = results.will_davison.name;
+    var playerHandicap = results.will_davison.handicap;
 
     // TEST JSON AND VARIABLE
     console.log(results);
