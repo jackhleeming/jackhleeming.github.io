@@ -85,7 +85,7 @@
             var nametarget = document.getElementById("bio-name");
             var handicaptarget = document.getElementById("bio-handicap");
             var biotarget = document.getElementById("bio-content");
-            phototarget.innerHTML = '<img class="image-responsive" src="' + playerphotosrc + '">';
+            phototarget.innerHTML = '<img id="bio-photo" class="image-responsive" src="' + playerphotosrc + '">';
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
@@ -97,11 +97,11 @@
 <!-- PLAYER DETAILS -->
 <div class="container">
     <div id="row d-flex justify-content-center">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="player-photo">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="player-photo">
             
         </div>
 
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="player-detail">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" id="player-detail">
             <h1 id="bio-name"></h1>
             <p id="bio-handicap"></p>
             <p id="bio-content"></p>
