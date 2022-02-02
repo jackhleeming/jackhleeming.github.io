@@ -81,15 +81,14 @@
             var playerbio = results[selection].bio;
             
             // update html
+            var phototarget = document.getElementById("player-photo");
             var nametarget = document.getElementById("bio-name");
             var handicaptarget = document.getElementById("bio-handicap");
             var biotarget = document.getElementById("bio-content");
+            phototarget.innerHTML = '<img class="image-responsive" src="' + playerphotosrc + '">';
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
-
-            var phototarget = document.getElementById("player-photo");
-            phototarget.innerHTML = playerphotosrc
         }
    })
 };
@@ -99,7 +98,7 @@
 <div class="container">
     <div id="row d-flex justify-content-center">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="player-photo">
-
+            
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="player-detail">
@@ -127,7 +126,7 @@
 <br>
 <br>
 
-<p style="text-align: center;">Pinseekers.com test v0.45</p>
+<p style="text-align: center;">Pinseekers.com test v0.46</p>
 
 </body>
 </html>
