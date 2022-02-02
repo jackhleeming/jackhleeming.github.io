@@ -66,6 +66,7 @@
         },
         success:function(results){
             // assign json elements to variable
+            var select = document.getElementById("playerselect");
             var selection = select.options[select.selectedIndex].value;
             var playerfname = results[selection].fname;
             var playerlname = results[selection].lname;
@@ -121,7 +122,7 @@
 <br>
 <br>
 
-<p>Pinseekers.com Test v0.33</p>
+<p style="text-align: center;">Pinseekers.com Test v0.34</p>
 
 </body>
 </html>
