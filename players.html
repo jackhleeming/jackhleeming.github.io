@@ -66,8 +66,8 @@ function updatePlayer(){
     /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
-    var playerName = results.williamdavison.name;
-    var playerHandicap = results.williamdavison.handicap;
+    var playerName = results[selection].name;
+    var playerHandicap = results[selection].handicap;
 
     // TEST JSON AND VARIABLES
     console.log(results);
