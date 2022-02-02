@@ -9,15 +9,27 @@
 <link rel="stylesheet" href="style.css">
 
 <!-- FIRST jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <!-- THEN bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  function playersLoad() {
+    var selection = sessionStorage.getItem("selection");
+    if (selection = "") {
+      return false
+    } else {
+      updatePlayer();
+    }
+  }
+</script> 
+
 </head>
 
-<body>
+<body onload="playersLoad()">
 
 <!-- NAVIGATION -->
 <nav class="navbar navbar-default">
@@ -94,6 +106,8 @@
             console.log('JSON FAILED for data');
         },
         success:function(results){
+            var indexselection = sessionStorage.getItem("indexselection");
+              if (indexselection = "") {
             // assign selected player to variable
             var select = document.getElementById("playerselect");
             var selection = select.options[select.selectedIndex].value;
@@ -113,7 +127,32 @@
             phototarget.innerHTML = '<img id="bio-photo" class="img-responsive" src="' + playerphotosrc + '">';
             nametarget.innerHTML = playerfname + " " + playerlname;
             handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
+            biotarget.innerHTML = playerbio; 
+              } else {
+            // assign selected player to variable
+            var selection = sessionStorage.getItem("indexselection");
+
+            // assign json elements to variable for selected player
+            var playerphotosrc = results[selection].picture;
+            var playerfname = results[selection].fname;
+            var playerlname = results[selection].lname;
+            var playerhandicap = results[selection].handicap;
+            var playerbio = results[selection].bio;
+            
+            // update html
+            var phototarget = document.getElementById("player-photo");
+            var nametarget = document.getElementById("bio-name");
+            var handicaptarget = document.getElementById("bio-handicap");
+            var biotarget = document.getElementById("bio-content");
+            phototarget.innerHTML = '<img id="bio-photo" class="img-responsive" src="' + playerphotosrc + '">';
+            nametarget.innerHTML = playerfname + " " + playerlname;
+            handicaptarget.innerHTML = 'Handicap: ' + playerhandicap;
             biotarget.innerHTML = playerbio;
+
+
+              }
+
+
         }
    })
 };
