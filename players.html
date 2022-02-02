@@ -56,7 +56,7 @@
 <!-- RETRIEVE PLAYER INFORMATION -->
 <!-- TEST -->
 
-<p>test 26</p>
+<p>test 25</p>
 
 <!-- RETRIEVE PLAYER DETAIL FROM JSON AND RENDER ON PAGE -->
 <script>
@@ -82,20 +82,14 @@ function updatePlayer(){
     console.log(playerfname);
     console.log(playerhandicap);
     
-    // REMOVE EXISTING CONTENT
-    var container = document.getElementById("player-detail");
-    container.remove("bio-name");
-    container.remove("bio-handicap");
-    container.remove("bio-content");
-
     // UPDATE HTML
     var html = "<p>" + playerfname + " " + playerlname + "</p>";
     var nametarget = document.getElementById("bio-name");
     var handicaptarget = document.getElementById("bio-handicap");
     var biotarget = document.getElementById("bio-content");
-    nametarget.insertAdjacentHTML("afterbegin", '<h1 id="bio-name">' + playerfname + " " + playerlname + '</h1>');
-    handicaptarget.insertAdjacentHTML("afterbegin", '<h2 id="bio-handicap">' + playerhandicap + '</h2>');
-    biotarget.insertAdjacentHTML("afterbegin", '<p id="bio-content">' + playerbio + '</p>');
+    nametarget.insertAdjacentHTML(playerfname + " " + playerlname);
+    handicaptarget.insertAdjacentHTML(playerhandicap);
+    biotarget.replaceWith(playerbio);
     }
    })
 };
@@ -109,7 +103,9 @@ function updatePlayer(){
 <div>
     <div id="row">
         <div class="col-12" id="player-detail">
-            <!-- UPDATE PLAYER FUNCTION GOES HERE -->
+            <h1 id="bio-name"></h1>
+            <h2 id="bio-handicap"></h2>
+            <p id="bio-content"></p>
         </div>
     </div>
 </div>
