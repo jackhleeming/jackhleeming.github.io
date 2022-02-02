@@ -38,7 +38,7 @@
 
     <select id="playerselect" onchange="updatePlayer()">
         <option value="" selected>Select Golfer</option>
-        <option value="williamdavison">Will Davison</option>
+        <option value="willdavison">William Davison</option>
         <option value="cameronmccoll">Cameron McCool</option>
         <option value="marcuswilliams">Marcus Williams</option>
         <option value="jacklarsen">Jack Larsen</option>
@@ -58,10 +58,9 @@
 
 <p>test 25</p>
 
+<!-- RETRIEVE PLAYER DETAIL FROM JSON AND RENDER ON PAGE -->
 <script>
 var url = "https://raw.githubusercontent.com/jackhleeming/jackhleeming.github.io/main/players.json";
-
-/* this tells the page to wait until jQuery has loaded, so you can use the Ajax call */
 function updatePlayer(){
   $.ajax({
     url: url,
@@ -70,7 +69,6 @@ function updatePlayer(){
         console.log('JSON FAILED for data');
       },
     success:function(results){
-    /* the results is your json, you can reference the elements directly by using it here, without creating any additional variables */
     var select = document.getElementById("playerselect");
     var selection = select.options[select.selectedIndex].value;
     var playerfname = results[selection].fname;
@@ -86,21 +84,28 @@ function updatePlayer(){
     
     // UPDATE HTML
     var html = "<p>" + playerfname + " " + playerlname + "</p>";
-    var target = document.getElementById("player-detail");
-    target.insertAdjacentHTML("afterbegin", html)
+    var nametarget = document.getElementById("bio-name");
+    var handicaptarget = document.getElementById("bio-handicap");
+    var biotarget = document.getElementById("bio-content");
+    nametarget.insertAdjacentHTML("afterbegin", playerfname + " " + playerlname);
+    handicaptarget.insertAdjacentHTML("afterbegin", playerhandicap);
+    biotarget.insertAdjacentHTML("afterbegin", playerbio);
     }
    })
 };
-
-
 </script>
 
+<h1 id="bio-name"></h1>
+<h2 id="bio-handicap"></h2>
+<p id="bio-content"></p>
 
 <!-- PLAYER DETAILS -->
 <div>
     <div id="row">
         <div class="col-12" id="player-detail">
-            <!-- RETURN JSON HERE -->
+            <h1 id="bio-name"></h1>
+            <h2 id="bio-handicap"></h2>
+            <p id="bio-content"></p>
         </div>
     </div>
 </div>
