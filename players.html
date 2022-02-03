@@ -16,20 +16,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-  function playerLoad() {
-    var selection = sessionStorage.getItem("selection");
-    if (selection = "") {
-      
-    } else {
-      updatePlayer();
-    }
-  }
-</script> 
-
 </head>
 
-<body onload="playerLoad()">
+<body onload="updatePlayer()">
 
 <!-- NAVIGATION -->
 <nav class="navbar navbar-default">
@@ -92,7 +81,7 @@
         },
         success:function(results){
             // get player selection
-            var indexselection = sessionStorage.getItem("selection");
+            var selection = sessionStorage.getItem("selection");
             // assign json elements to variable for selected player
             var playerphotosrc = results[selection].picture;
             var playerfname = results[selection].fname;
