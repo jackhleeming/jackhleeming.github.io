@@ -18,7 +18,7 @@
 
 <script>
   function playerLoad() {
-    var selection = sessionStorage.getItem("indexselection");
+    var selection = sessionStorage.getItem("selection");
     if (selection = "") {
       
     } else {
@@ -68,6 +68,14 @@
           </ul>
         </div>
       </div>
+
+    <script>
+        function gotoPlayer(player) {
+            sessionStorage.setItem("selection", player);
+            updatePlayer();
+        }
+    </script>
+
 <!-- PLAYER PROFILES -->
 <br>
 
@@ -84,7 +92,7 @@
         },
         success:function(results){
             // get player selection
-            var indexselection = sessionStorage.getItem("indexselection");
+            var indexselection = sessionStorage.getItem("selection");
             // assign json elements to variable for selected player
             var playerphotosrc = results[selection].picture;
             var playerfname = results[selection].fname;
